@@ -16,7 +16,7 @@ export default function Live2D() {
   useEffect(() => {
     if (showPet && !isMobile()) {
       Promise.all([
-        loadExternalResource('https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/live2d.min.js', 'js')
+        loadExternalResource('https://cdn.jsdelivr.net/npm/live2d-widget-model-miku/assets/miku.model.json', 'js')
       ]).then((e) => {
         if (typeof window?.loadlive2d !== 'undefined') {
           // https://github.com/xiazeyu/live2d-widget-models
@@ -40,7 +40,7 @@ export default function Live2D() {
     return <></>
   }
 
-  return <canvas id="live2d" width="280" height="250" onClick={handleClick}
+  return <canvas id="live2d" width="280" height="500" onClick={handleClick}
         className="cursor-grab"
         onMouseDown={(e) => e.target.classList.add('cursor-grabbing')}
         onMouseUp={(e) => e.target.classList.remove('cursor-grabbing')}
